@@ -106,11 +106,19 @@ public class OIDCLoginProtocol implements LoginProtocol {
     public static final String CODE_CHALLENGE_METHOD_PARAM = "code_challenge_method";
 
     // https://tools.ietf.org/html/rfc7636#section-4.2
-    public static final int PKCE_CODE_CHALLENGE_MIN_LENGTH = 43;
+    // Currently the library being used to perform front-end authentication using PKCE
+    // generates a very short code.  Keycloak is adhering to the spec in terms of requiring
+    // a minimum code of 43 chars.  This change ensures auth can continue to work using
+    // Solid-auth-fetcher
+    public static final int PKCE_CODE_CHALLENGE_MIN_LENGTH = 5; //43;
     public static final int PKCE_CODE_CHALLENGE_MAX_LENGTH = 128;
 
     // https://tools.ietf.org/html/rfc7636#section-4.1
-    public static final int PKCE_CODE_VERIFIER_MIN_LENGTH = 43;
+    // Currently the library being used to perform front-end authentication using PKCE
+    // generates a very short code.  Keycloak is adhering to the spec in terms of requiring
+    // a minimum code of 43 chars.  This change ensures auth can continue to work using
+    // Solid-auth-fetcher
+    public static final int PKCE_CODE_VERIFIER_MIN_LENGTH = 5; //43;
     public static final int PKCE_CODE_VERIFIER_MAX_LENGTH = 128;    
     
     // https://tools.ietf.org/html/rfc7636#section-6.2.2

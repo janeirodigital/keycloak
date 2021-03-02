@@ -43,7 +43,8 @@ public class Cors {
 
     public static final long DEFAULT_MAX_AGE = TimeUnit.HOURS.toSeconds(1);
     public static final String DEFAULT_ALLOW_METHODS = "GET, HEAD, OPTIONS";
-    public static final String DEFAULT_ALLOW_HEADERS = "Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers";
+    // Add dpop as a header that is valid for CORS
+    public static final String DEFAULT_ALLOW_HEADERS = "Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, dpop";
 
     public static final String ORIGIN_HEADER = "Origin";
     public static final String AUTHORIZATION_HEADER = "Authorization";
